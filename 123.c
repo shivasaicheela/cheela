@@ -11,7 +11,7 @@ int **A; // alloaction
 int **maxR; // maximum required resources 
 int **needed; // need of resources
 int *safeS; // safe sequence of process
-int nProRan = 0; // number of processran
+int nProRan = 0; // number of process index runs
 
 pthread_mutex_t LR;
 pthread_cond_t cond;
@@ -111,14 +111,7 @@ void* PC(void *arg)
         printf("\tResource Allocated!");
         printf("\n"); 
 		sleep(1);
-       // printf("\tProcess Code Running...");
-       // printf("\n"); 
-	  //	sleep(rand()%3 + 2); 
-		
-		// process code
-       // printf("\tProcess Code Completed...");
-       // printf("\n"); 
-	  //	sleep(1);
+	
        printf("\tProcess Releasing Resource...");
        printf("\n"); 
 	//	sleep(1);
@@ -133,7 +126,7 @@ void* PC(void *arg)
         
         for( i=0; i<nR; i++)
         {
-        	printf("%3d", R[i]);
+        	printf("%d", R[i]);
 		}
                 
         printf("\n\n");
@@ -214,12 +207,12 @@ int main( )
 
         if(check_safe()!=1)
 		{
-                printf("\nUnsafe State! The processes leads the system to a unsafe state.\n\n");
+                printf("\nUnsafe State system to a unsafe state.\n\n");
                 exit(-1);
         }
 		
        
-        printf("\nExecuting Processes...\n\n");
+        printf("\nExecuting Processes.");
         sleep(1);
 	
 	// run threads
