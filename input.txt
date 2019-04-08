@@ -1,0 +1,16 @@
+Test cases:
+Number of process: 5
+Number of resources: 3
+Number of available are 2 3 0
+Allocations: 
+010
+302
+302
+211
+002
+Maximum needed:
+743
+020
+600
+011
+431
